@@ -1,7 +1,9 @@
 import React from 'react';
-import { createRoot } from 'react-dom/client';
+import ReactDOM from 'react-dom/client';
+import App from "./App.jsx";
 
-console.log("Iniciando aplicación...");
-
-const root = createRoot(document.getElementById('app'));
-root.render(<h1>¡Hola, mundo!</h1>);
+ReactDOM.createRoot(document.getElementById("root")).render(
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  );
