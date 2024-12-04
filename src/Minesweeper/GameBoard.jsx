@@ -3,7 +3,6 @@
 import React from "react";
 import { Grid } from "@mui/material/Grid2";
 import Cell from "./Cell";
-import "./styles/GameBoard.css";
 
 const GameBoard = ({ board, size, onCellClick, onCellRightClick}) => {
     return (
