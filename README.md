@@ -68,8 +68,8 @@ The static files will be located in the `dist` folder.
 src/
 ├── App.jsx                         # Main component
 ├── main.jsx                        # Entry point
-|── Components
-|   └──Minesweeper/
+├── Components
+│   └──Minesweeper/
 │       ├── Cell.jsx                # Individual cell component
 │       ├── GameBoard.jsx           # Board component
 │       ├── GameContainer.jsx       # Container for centering the app
