@@ -150,5 +150,14 @@ class Minesweeper{
         cell.isFlagged = !cell.isFlagged;
         this.flagCount += cell.isFlagged ? 1 : -1;
     }
+
+    revealAllMines() {
+        this.matrix.forEach((cell) => {
+            if (cell.isMine) {
+                cell.isDisclosed = true;
+            }
+        });
+    }
+
     
 }
