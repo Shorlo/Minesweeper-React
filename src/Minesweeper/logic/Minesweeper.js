@@ -159,5 +159,20 @@ class Minesweeper{
         });
     }
 
-    
+    printBoard() {
+        for (let y = 0; y < this.size.y; y++) {
+            let row = "";
+            for (let x = 0; x < this.size.x; x++) {
+                const cell = this.getCell(x, y);
+                if (cell.isDisclosed) {
+                    row += cell.isMine ? "💣" : cell.warning || " ";
+                } else {
+                    row += cell.isFlagged ? "🚩" : "■";
+                }
+            }
+            console.log(row);
+        }
+    }
 }
+
+export default Minesweeper;
