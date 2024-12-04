@@ -30,10 +30,12 @@ class Minesweeper{
 
     getCell(x, y) {
         if (x < 0 || y < 0 || x >= this.size.x || y >= this.size.y) return null;
+        
         return this.matrix[y * this.size.x + x];
     }
 
     placeMines(startX, startY) {
+
         const forbiddenCells = new Set();
         const offsets = [
             [-1, -1],
@@ -46,6 +48,7 @@ class Minesweeper{
             [0, 1],
             [1, 1]
         ];
+
         offsets.forEach(([dx, dy]) => {
             const nx = startX + dx;
             const ny = startY + dy;
@@ -54,15 +57,18 @@ class Minesweeper{
             }
         });
 
-        let remainingMines = this.mineCount;
+        let remainingMines = this.mineCount; //
+
         while ( remainingMines > 0) {
             const index = Math.floor(Math.random() * this.matrix.length);
+            
             if (!forbiddenCells.has(index) && !this.matrix[index].isMine) {
                 this.matrix[index].isMine = true;
                 this.updateWarnings(index);
                 remainingMines--;
             }
         }
+
         this.state = "playing";
     }
 
@@ -79,6 +85,7 @@ class Minesweeper{
             [0, 1],
             [1, 1],
         ];
+
         offsets.forEach(([dx, dy]) => {
             const nx = x + dx;
             const ny = y + dy;
@@ -88,5 +95,28 @@ class Minesweeper{
             }
         });
     }
-    
+
+    disclose(x, y) {
+        const cell = this.getCell(x, y);
+        if (!cell || cell.isDisclosed || cell.isFlagged) return;
+
+        if (this.state === "pristine") this.placeMines(x, y);
+
+        if (cell.isMine) {
+            cell.isExploded = true;
+            this.state = "exploded";
+            return "Mine hit!";
+        }
+
+        this.discloseRecursive(x, y);
+
+        if (this.remainingCount === 0) {
+            this.state = "solved";
+            return "You solved it!";
+        }
+        
+        return "Disclosed!";
+    }
+
+    discloseRecursive(x, y) {}
 }
