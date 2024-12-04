@@ -118,5 +118,29 @@ class Minesweeper{
         return "Disclosed!";
     }
 
-    discloseRecursive(x, y) {}
+    discloseRecursive(x, y) {
+        const cell = this.getCell(x, y);
+        if (!cell || cell.isDisclosed || cell.isFlagged) return;
+
+        cell.isDisclosed = true;
+        this.remainingCount--;
+
+        if (cell.warning === 0) {
+            const offsets = [
+                [-1, -1],
+                [0, -1],
+                [1, -1],
+                [-1, 0],
+                [1, 0],
+                [-1, 1],
+                [0, 1],
+                [1, 1],
+            ];
+
+            offsets.forEach(([dx, dy]) => {
+                this.discloseRecursive(x + dx, y + dy);
+            });
+        }
+    }
+    
 }
