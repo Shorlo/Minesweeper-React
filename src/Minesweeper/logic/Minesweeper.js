@@ -142,5 +142,13 @@ class Minesweeper{
             });
         }
     }
+
+    toggleFlag(x, y) {
+        const cell = this.getCell(x, y);
+        if (!cell || cell.isDisclosed) return;
+
+        cell.isFlagged = !cell.isFlagged;
+        this.flagCount += cell.isFlagged ? 1 : -1;
+    }
     
 }
