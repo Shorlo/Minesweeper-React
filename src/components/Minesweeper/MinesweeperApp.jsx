@@ -9,7 +9,7 @@ import {
   DialogContent,
   DialogActions,
 } from "@mui/material";
-import GameBoard from "./GameBoard";
+import GameBoard from "./GameBoard.jsx";
 import Minesweeper from "./logic/Minesweeper.js";
 import "./styles/MinesweeperApp.css";
 
