@@ -66,19 +66,20 @@ The static files will be located in the `dist` folder.
 
 ```
 src/
-├── App.jsx                     # Main component
-├── main.jsx                    # Entry point
-├── Minesweeper/
-│   ├── Cell.jsx                # Individual cell component
-│   ├── GameBoard.jsx           # Board component
-│   ├── GameContainer.jsx       # Container for centering the app
-│   ├── MinesweeperApp.jsx      # Minesweeper app logic
-│   ├── logic/
-│   │   └── Minesweeper.js      # Game logic
-│   └── styles/                 # CSS styles
-│       ├── Cell.css
-│       ├── GameContainer.css
-│       └── MinesweeperApp.css
+├── App.jsx                         # Main component
+├── main.jsx                        # Entry point
+|── Components
+|   └──Minesweeper/
+│       ├── Cell.jsx                # Individual cell component
+│       ├── GameBoard.jsx           # Board component
+│       ├── GameContainer.jsx       # Container for centering the app
+│       ├── MinesweeperApp.jsx      # Minesweeper app logic
+│       ├── logic/
+│       │   └── Minesweeper.js      # Game logic
+│       └── styles/                 # CSS styles
+│           ├── Cell.css
+│           ├── GameContainer.css
+│           └── MinesweeperApp.css
 ```
 
 ## Technologies Used
