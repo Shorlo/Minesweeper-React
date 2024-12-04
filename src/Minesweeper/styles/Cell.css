@@ -1,0 +1,22 @@
+.cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #999;
+    cursor: pointer;
+    font-size: 18px;
+    background-color: #ccc;
+  }
+  .cell.disclosed {
+    background-color: #eee;
+  }
+  .cell.mine {
+    background-color: red;
+    color: white;
+  }
+  .cell.flag {
+    background-color: yellow;
+    color: black;
+  }
