@@ -66,5 +66,27 @@ class Minesweeper{
         this.state = "playing";
     }
 
-    updateWarnings(index) {}
+    updateWarnings(index) {
+        const x = index % this.size.x;
+        const y = Math.floor(index / this.size.x);
+        const offsets = [
+            [-1, -1],
+            [0, -1],
+            [1, -1],
+            [-1, 0],
+            [1, 0],
+            [-1, 1],
+            [0, 1],
+            [1, 1],
+        ];
+        offsets.forEach(([dx, dy]) => {
+            const nx = x + dx;
+            const ny = y + dy;
+            const cell = this.getCell(nx, ny);
+            if (cell && !cell.isMine) {
+                cell.warning++;
+            }
+        });
+    }
+    
 }
