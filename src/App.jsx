@@ -1,11 +1,11 @@
 //src/App.jsx
 
 import React from 'react';
-import MinesweeperApp from './Minesweeper/MinesweeperApp';
+import GameContainer from './Minesweeper/GameContainer';
 
 function App() {
     return(
-        <MinesweeperApp />
+        <GameContainer />
     )
 }
 
