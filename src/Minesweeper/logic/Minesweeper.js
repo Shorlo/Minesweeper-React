@@ -33,5 +33,38 @@ class Minesweeper{
         return this.matrix[y * this.size.x + x];
     }
 
-    
+    placeMines(startX, startY) {
+        const forbiddenCells = new Set();
+        const offsets = [
+            [-1, -1],
+            [0, -1],
+            [1, -1],
+            [-1, 0],
+            [0, 0],
+            [1, 0],
+            [-1, 1],
+            [0, 1],
+            [1, 1]
+        ];
+        offsets.forEach(([dx, dy]) => {
+            const nx = startX + dx;
+            const ny = startY + dy;
+            if (nx >= 0 && ny >= 0 && nx < this.size.x && ny < this.size.y) {
+                forbiddenCells.add(ny * this.size.x + nx);
+            }
+        });
+
+        let remainingMines = this.mineCount;
+        while ( remainingMines > 0) {
+            const index = Math.floor(Math.random() * this.matrix.length);
+            if (!forbiddenCells.has(index) && !this.matrix[index].isMine) {
+                this.matrix[index].isMine = true;
+                this.updateWarnings(index);
+                remainingMines--;
+            }
+        }
+        this.state = "playing";
+    }
+
+    updateWarnings(index) {}
 }
