@@ -1,21 +1,18 @@
 // src/Minesweeper/GameBoard.jsx
 
 import React from "react";
-import { Grid } from "@mui/material/Grid2";
 import Cell from "./Cell";
 
-const GameBoard = ({ board, size, onCellClick, onCellRightClick}) => {
+const GameBoard = ({ board, size, onCellClick, onCellRightClick }) => {
     return (
-        <Grid 
-            container
-            spacing={0}
-            sx={{
+        <div
+            style={{
                 display: "grid",
                 gridTemplateColumns: `repeat(${size.x}, 30px)`,
                 gridTemplateRows: `repeat(${size.y}, 30px)`,
                 justifyContent: "center",
                 margin: "20px auto",
-            }}    
+            }}
         >
             {board.map((cell, index) => {
                 const x = index % size.x;
@@ -31,7 +28,7 @@ const GameBoard = ({ board, size, onCellClick, onCellRightClick}) => {
                     />
                 );
             })}
-        </Grid>
+        </div>
     );
 };
 
