@@ -94,4 +94,20 @@ This project is licensed under the **GNU GENERAL PUBLIC LICENSE Version 3, 29 Ju
 Contributions are welcome! If you want to collaborate, please open an issue or submit a pull request in this repository.
 
 ## Screenshots
-*(Add screenshots here to showcase the game)*
+
+Here are some screenshots showcasing the Minesweeper game:
+
+### Main Menu
+![Screenshot 1](./screenshot/screenshot-01.png)
+
+### Mine Hit!
+![Screenshot 2](./screenshot/screenshot-02.png)
+
+### Revel All Mines!
+![Screenshot 3](./screenshot/screenshot-03.png)
+
+### Flags in Action
+![Screenshot 4](./screenshot/screenshot-04.png)
+
+### Victory Screen!
+![Screenshot 5](./screenshot/screenshot-05.png)
