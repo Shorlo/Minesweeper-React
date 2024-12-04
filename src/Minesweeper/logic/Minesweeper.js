@@ -27,4 +27,11 @@ class Minesweeper{
             warning: 0
         }));
     }
+
+    getCell(x, y) {
+        if (x < 0 || y < 0 || x >= this.size.x || y >= this.size.y) return null;
+        return this.matrix[y * this.size.x + x];
+    }
+
+    
 }
