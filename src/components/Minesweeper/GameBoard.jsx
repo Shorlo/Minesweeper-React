@@ -2,16 +2,14 @@
 
 import React from "react";
 import Cell from "./Cell";
+import "./styles/GameBoard.css";
 
 const GameBoard = ({ board, size, onCellClick, onCellRightClick }) => {
     return (
-        <div
+        <div className="game-board"
             style={{
-                display: "grid",
                 gridTemplateColumns: `repeat(${size.x}, 30px)`,
                 gridTemplateRows: `repeat(${size.y}, 30px)`,
-                justifyContent: "center",
-                margin: "20px auto",
             }}
         >
             {board.map((cell, index) => {

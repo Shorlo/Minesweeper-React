@@ -1,0 +1,5 @@
+.game-board {
+    display: grid;
+    justify-content: center;
+    margin: 20px auto;
+}
