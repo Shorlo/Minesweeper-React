@@ -3,7 +3,7 @@
 import React from "react";
 import "./styles/Cell.css";
 
-const Cell = ({x, y, cell, onClick, onRightClick}) => {
+const Cell = ({cell, onClick, onRightClick}) => {
     const getClassNames = () => {
         let classes = "cell";
         if (cell.isDisclosed) classes += " disclosed";
