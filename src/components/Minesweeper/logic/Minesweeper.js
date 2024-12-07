@@ -13,26 +13,31 @@ class Minesweeper{
          * @type {{x: number, y: number}}
          */
         this.size = {x: 0, y: 0};
+
         /**
          * The total number of mines on the board.
          * @type {number}
          */
         this.mineCount = 0;
+
         /**
          * The number of cells remaining to be disclosed to solve the board.
          * @type {number}
          */
         this.remainingCount = 0;
+
         /**
          * The number of cells flagged by the player.
          * @type {number}
          */
         this.flagCount = 0;
+
         /**
          * The current state of the game.
          * @type {string}
          */
         this.state = "initialized";
+
         /**
          * The matrix representing the board.
          * @type {Array<Object>}
