@@ -26,7 +26,7 @@ const MinesweeperApp = () => {
 
     const initializeGame = () => {
         const newGame = new Minesweeper();
-        newGame.initialize({x: 10, y: 10}, 15);
+        newGame.initialize({x: 20, y: 20}, 40);
         setGame(newGame);
         setBoard(newGame.matrix);
         setGameState("playing");
