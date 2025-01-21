@@ -13,6 +13,14 @@ import GameBoard from "./GameBoard.jsx";
 import Minesweeper from "./logic/Minesweeper.js";
 import "./styles/MinesweeperApp.css";
 
+/**
+ * MinesweeperApp component
+ * 
+ * This component represents the main Minesweeper game application.
+ * It initializes the game, manages the game state, and handles the modal dialogs.
+ * 
+ * @component
+ */
 const MinesweeperApp = () => {
     const [game, setGame] = useState(null);
     const [board, setBoard] = useState([]);
@@ -24,6 +32,12 @@ const MinesweeperApp = () => {
         initializeGame();
     }, []);
 
+    /**
+     * Initializes a new Minesweeper game.
+     * 
+     * This function creates a new Minesweeper game instance, sets up the game board,
+     * and resets the game state and modal dialogs.
+     */
     const initializeGame = () => {
         const newGame = new Minesweeper();
         newGame.initialize({x: 20, y: 20}, 15);
@@ -34,6 +48,15 @@ const MinesweeperApp = () => {
         setModalMessage("");
     };
 
+    /**
+     * Handles the click event on a cell.
+     * 
+     * This function processes the cell click, updates the game state,
+     * and handles the game over or win conditions.
+     * 
+     * @param {number} x - The x-coordinate of the clicked cell.
+     * @param {number} y - The y-coordinate of the clicked cell.
+     */
     const handleCellClick = (x, y) => {
         if (!game || gameState !== "playing") return;
 
@@ -51,6 +74,16 @@ const MinesweeperApp = () => {
         setBoard([...game.matrix]);
     };
 
+    /**
+     * Handles the right-click event on a cell.
+     * 
+     * This function processes the cell right-click, toggles the flag state of the cell,
+     * and updates the game board accordingly.
+     * 
+     * @param {number} x - The x-coordinate of the right-clicked cell.
+     * @param {number} y - The y-coordinate of the right-clicked cell.
+     * @param {Event} event - The right-click event.
+     */
     const handleCellRightClick = (e, x, y) => {
         e.preventDefault();
         if (!game || gameState !== "playing") return;
